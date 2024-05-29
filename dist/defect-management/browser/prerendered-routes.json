@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/create-defect",
+    "/dashboard",
+    "/defect-by-developer",
+    "/defect-report",
+    "/defects-assigned",
+    "/login"
+  ]
+}

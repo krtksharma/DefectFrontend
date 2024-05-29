@@ -1,0 +1,120 @@
+<!-- new-defect.component -->
+<div class="container">
+
+  <h2>Add New Defect</h2>
+
+  <form class="defect-form" (ngSubmit)="submitForm(defectForm)" #defectForm="ngForm">
+
+    <div class="form-group">
+
+      <label for="title">Title</label>
+
+      <input type="text" #title="ngModel" class="form-control" id="title" name="title" [(ngModel)]="defectTitle" required>
+      <div *ngIf="title.invalid && title.touched" class="alert alert-danger mt-3" role="alert">
+        Title is empty
+      </div>
+    </div>
+
+    <div class="form-group">
+
+      <label for="status">Status</label>
+
+      <input type="text" class="form-control" id="status" name="status" [(ngModel)]="status" readonly>
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="defectDetails">Defect Details</label>
+
+      <textarea class="form-control" id="defectDetails" #defect="ngModel" name="defectDetails" [(ngModel)]="defectDetails" required></textarea>
+      <div *ngIf="defect.invalid && defect.touched" class="alert alert-danger mt-3" role="alert">
+        Enter some defect details.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="stepsToReproduce">Steps to Reproduce</label>
+      <textarea class="form-control" id="stepsToReproduce" name="stepsToReproduce" [(ngModel)]="stepsToReproduce" required #stepsToReproduceModel="ngModel" minlength="10s"></textarea>
+      <div *ngIf="stepsToReproduceModel.invalid && stepsToReproduceModel.touched" class="alert alert-danger mt-3" role="alert">
+              Steps to Reproduce must be at least 10 words long.
+      </div>
+      </div>
+
+    <div class="form-group">
+
+      <label for="defectPriority">Priority</label>
+
+      <select class="form-control" id="defectPriority" name="defectPriority" [(ngModel)]="defectPriority" required>
+
+        <option value="P1">P1</option>
+
+        <option value="P2">P2</option>
+
+        <option value="P3">P3</option>
+
+      </select>
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="defectSeverity">Severity</label>
+
+      <select class="form-control" id="defectSeverity" name="defectSeverity" [(ngModel)]="defectSeverity" required>
+
+        <option value="Blocking">Blocking</option>
+
+        <option value="Critical">Critical</option>
+
+        <option value="Major">Major</option>
+
+        <option value="Minor">Minor</option>
+
+        <option value="Low">Low</option>
+
+      </select>
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="assignedToDeveloperId">Assigned to Developer ID</label>
+
+      <input type="text" class="form-control" #devid="ngModel" id="assignedToDeveloperId" name="assignedToDeveloperId" [(ngModel)]="assignedToDeveloperId" required>
+      <div *ngIf="devid.invalid && devid.touched" class="alert alert-danger mt-3" role="alert">
+          Enter Some Developer Id
+      </div>
+    </div>
+
+    <div class="form-group">
+
+      <label for="reportedByTesterId">Reported by Tester ID</label>
+
+      <input type="text" class="form-control" #tester="ngModel" id="reportedByTesterId" name="reportedByTesterId" [(ngModel)]="reportedByTesterId" required>
+      <div *ngIf="tester.invalid && tester.touched" class="alert alert-danger mt-3" role="alert">
+        Enter Some Tester Id
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="detectedOn">Detected On</label>
+      <input type="date" class="form-control" id="detectedOn" name="detectedOn" [(ngModel)]="detectedOn" required
+                   [min]="today"  #detectedOnInput="ngModel">
+      </div>
+
+    <div class="form-group">
+
+      <label for="projectCode">Project Code</label>
+
+      <input type="number" class="form-control" id="projectCode" #projectId="ngModel" name="projectCode" [(ngModel)]="projectCode" required>
+    </div>
+
+    <button type="submit" [disabled]="defectForm.invalid" class="btn btn-primary">Submit</button>
+
+  </form>
+
+  <div *ngIf="submitted" class="success-message">Defect submitted successfully!</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+</div>

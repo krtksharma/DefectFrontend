@@ -1,0 +1,84 @@
+
+<div class="container mt-2">
+        <div class="row">
+        <div class="col-md-6">
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="projectId" placeholder="Project Code">
+        <button class="btn btn-primary" type="button" (click)="getDefectReport()">Fetch Defects Report</button>
+        </div>
+        </div>
+        </div>
+    <div *ngIf="defectReport">
+
+  <h2>Defects Report for Project ID: {{ projectId }}</h2>
+
+  <div class="table-responsive">
+
+    <table class="table table-bordered table-striped">
+
+      <thead>
+
+        <tr>
+
+          <th>ID</th>
+
+          <th>Title</th>
+
+          <th>Details</th>
+
+          <th>Steps to Reproduce</th>
+
+          <th>Priority</th>
+
+          <th>Detected On</th>
+
+          <th>Expected Resolution</th>
+
+          <th>Reported By</th>
+
+          <th>Assigned To</th>
+
+          <th>Severity</th>
+
+          <th>Status</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let defect of defectReport.defects">
+
+          <td>{{ defect.id }}</td>
+
+          <td>{{ defect.title }}</td>
+
+          <td>{{ defect.defectdetails }}</td>
+
+          <td>{{ defect.stepstoreproduce }}</td>
+
+          <td>{{ defect.priority }}</td>
+
+          <td>{{ defect.detectedon }}</td>
+
+          <td>{{ defect.expectedresolution }}</td>
+
+          <td>{{ defect.reportedbytesterid }}</td>
+
+          <td>{{ defect.assignedtodeveloperid }}</td>
+
+          <td>{{ defect.severity }}</td>
+
+          <td>{{ defect.status }}</td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+</div>

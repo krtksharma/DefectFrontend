@@ -1,0 +1,26 @@
+<!-- defect-list.component.html -->
+<div class="container mt-4">
+    <h2>New Defects Assigned</h2>
+    <table class="table">
+    <thead>
+    <tr>
+    <th>Title</th>
+    <th>Priority</th>
+    <th>Severity</th>
+    <th>Assigned To</th>
+    <th>Status</th>
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let defect of defects">
+    <td>{{ defect.title }}</td>
+    <td>{{ defect.priority }}</td>
+    <td>{{ defect.severity }}</td>
+    <td>{{ defect.assignedtodeveloperid }}</td> 
+    <td>{{ defect.status }}</td>
+    <td><button (click)="viewDetails(defect.id)" class="btn btn-primary">View Details</button></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>

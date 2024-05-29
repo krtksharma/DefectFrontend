@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <div class="row">
+    <div class="col-md-6 offset-md-3">
+    <form (ngSubmit)="login()">
+    <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" required>
+    <!-- Display error message if username is empty -->
+    <div *ngIf="authService.errorMessage && authService.errorMessage !== '' && !username" class="alert alert-danger mt-3" role="alert">
+                {{ authService.errorMessage }}
+    </div>
+    </div>
+    <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required>
+    <!-- Display error message if password is empty -->
+    <div *ngIf="authService.errorMessage && authService.errorMessage !== '' && !password" class="alert alert-danger mt-3" role="alert">
+                {{ authService.errorMessage }}
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <!-- Display error message for incorrect credentials -->
+    <div *ngIf="authService.errorMessage && authService.errorMessage !== '' && username!=='' && password!=='' && authService.successMessage === ''" class="alert alert-danger mt-3" role="alert">
+              {{ authService.errorMessage }}
+    </div>
+    <!-- Display success message if authentication is successful -->
+    <div *ngIf="authService.successMessage && authService.successMessage !== ''" class="alert alert-success mt-3" role="alert">
+              {{ authService.successMessage }}
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>

@@ -1,0 +1,51 @@
+<div class="container mt-4">
+
+  <h1>Dashboard</h1>
+
+  <div class="row">
+
+    <div class="col-md-6">
+
+      <div class="card">
+
+        <div class="card-body">
+
+          <h5 class="card-title">Summary Statistics</h5>
+
+          <p class="card-text">Total defects: {{ totalDefects }}</p>
+
+          <p class="card-text">Unresolved defects: {{ unresolvedDefects }}</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+      <div class="card">
+
+        <div class="card-body">
+
+          <h5 class="card-title">Defects by Priority</h5>
+
+          <ul class="list-group">
+
+            <li class="list-group-item" *ngFor="let defect of defectsByPriority">
+
+              {{ defect.priority }}: {{ defect.count }}
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

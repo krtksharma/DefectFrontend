@@ -1,0 +1,45 @@
+<div class="container">
+    <div *ngIf="defect">
+        <p><strong>ID:</strong> {{ defect.id }}</p>
+        <p><strong>Title:</strong> {{ defect.title }}</p>
+        <p><strong>Description:</strong> {{ defect.defectdetails }}</p>
+        <p><strong>Priority:</strong> {{ defect.priority }}</p>
+        <p><strong>Detected On:</strong> {{ defect.detectedon | date }}</p>
+        <p><strong>Expected Resolution:</strong> {{ defect.expectedresolution | date }}</p>
+        <p><strong>Reported By Tester ID:</strong> {{ defect.reportedbytesterid }}</p>
+        <p><strong>Assigned To Developer ID:</strong> {{ defect.assignedtodeveloperid }}</p>
+        <p><strong>Severity:</strong> {{ defect.severity }}</p>
+        <p><strong>Status:</strong> {{ defect.status }}</p>
+        <p><strong>Project Code:</strong> {{ defect.projectcode }}</p>
+        <div *ngIf="defect.resolutions && defect.resolutions.length > 0">
+        <p><strong>Resolutions:</strong></p>
+        <ul>
+        <li *ngFor="let resolution of defect.resolutions">
+        <p><strong>Resolution ID:</strong> {{ resolution.id }}</p>
+        <p><strong>Resolution Date:</strong> {{ resolution.resolutiondate | date }}</p>
+        <p><strong>Resolution:</strong> {{ resolution.resolution }}</p>
+        </li>
+        </ul>
+        </div>
+    <button class="btn btn-primary" (click)="showUpdateForm()" *ngIf="!showButton">Update Defect</button>
+    <form (ngSubmit)="updateDefect()" #defectForm="ngForm" *ngIf="showForm">
+    <h3>Update Defect</h3>
+    <div class="form-group">
+    <label for="resolution">Resolution:</label>
+    <textarea class="form-control" id="resolution" name="resolution" [(ngModel)]="resolution"></textarea>
+    </div>
+    <div class="form-group">
+    <label for="status">Status:</label>
+    <select class="form-control" id="status" name="status" [(ngModel)]="status">
+    <option value="Open">Open</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Resolved">Resolved</option>
+    <!-- Add more status options as needed -->
+    </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    </div>
+    <div *ngIf="!defect">Defect not found</div>
+    <div *ngIf="acknowledgment">{{ acknowledgment }}</div>
+    </div>
