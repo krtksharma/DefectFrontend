@@ -64,19 +64,22 @@ ng serve
    Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
    
 **Fork the repository.**
+
 **Create your feature branch (git checkout -b feature/your-feature-name).**
+
 **Commit your changes (git commit -am 'Add some feature').**
+
 **Push to the branch (git push origin feature/your-feature-name).**
+
 **Create a new Pull Request.**
 
 ## Backend
 
-The backend of the Defect Management System is hosted on **Railway**. It provides APIs for handling user authentication, defect management, and other 
-functionalities.
+The backend of the Defect Management System is hosted on [Railway](https://defectmanagement-production.up.railway.app/). It provides APIs for handling user authentication, defect management, and other functionalities.
 
 ## Frontend
 
-The frontend of the Defect Management System is hosted on **Vercel**. It provides a user interface for interacting with the system, allowing users to log in, create defects, view defect lists, and perform other actions.
+The frontend of the Defect Management System is hosted on [Vercel](https://defect-frontend.vercel.app/). It provides a user interface for interacting with the system, allowing users to log in, create defects, view defect lists, and perform other actions.
 
 
 
