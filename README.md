@@ -1,27 +1,82 @@
-# DefectManagement
+# Defect Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+This is a Defect Management System built with Angular for managing defects in software projects.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code scaffolding
+## Introduction
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Defect Management System is a web application designed to streamline the process of defect tracking and resolution in software development projects. It provides a user-friendly interface for testers, developers, and product owners to manage defects efficiently.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **User Authentication**: Secure user authentication system allows users to log in with their credentials.
+- **Role-Based Access Control**: Role-based access control ensures that users can only access features relevant to their role (Tester, Developer, Product Owner).
+- **Defect Creation**: Users can create new defects with detailed information including title, description, steps to reproduce, priority, severity, etc.
+- **Defect Listing**: Display a list of all defects along with their status, severity, priority, etc.
+- **Defect Details**: View detailed information about a specific defect, including resolution history.
+- **Defect Assignment**: Developers can view defects assigned to them and update their status and resolution.
+- **Defect Reporting**: Product owners can generate reports on defects for better project management.
+- **Responsive Design**: The application is responsive and works seamlessly across different devices.
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Navigate to the Project Directory
 
-## Running end-to-end tests
+Navigate to the project directory:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+cd defect-management
 
-## Further help
+### Install Dependencies
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Install dependencies:
+
+npm install
+
+### Run the Application
+
+Run the application:
+
+ng serve
+
+## Open your browser and visit http://localhost:4200 to access the application.
+
+## Usage
+
+**Login** : Log in with your credentials as a Tester, Developer, or Product Owner.
+**Dashboard** : Upon successful login, you will be redirected to the dashboard based on your role.
+**Create Defect** : Testers can create new defects with detailed information.
+**Defect Listing** : View a list of all defects along with their status and other details.
+**Defect Details** : Click on a defect to view detailed information including resolution history.
+**Defect Assignment** : Developers can view defects assigned to them and update their status and resolution.
+**Defect Reporting** : Product Owners can generate reports on defects for better project management.
+
+
+## Contributing
+
+   Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+   
+**Fork the repository.**
+**Create your feature branch (git checkout -b feature/your-feature-name).**
+**Commit your changes (git commit -am 'Add some feature').**
+**Push to the branch (git push origin feature/your-feature-name).**
+**Create a new Pull Request.**
+
+## Backend
+
+The backend of the Defect Management System is hosted on **Railway**. It provides APIs for handling user authentication, defect management, and other 
+functionalities.
+
+## Frontend
+
+The frontend of the Defect Management System is hosted on **Vercel**. It provides a user interface for interacting with the system, allowing users to log in, create defects, view defect lists, and perform other actions.
+
+
+
