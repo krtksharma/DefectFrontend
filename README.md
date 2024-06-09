@@ -54,6 +54,7 @@ ng serve
             Credentials for tester -> userName : tester and password : tester123
                             developer -> userName : developer and password : developer123
                             product owner -> userName : product and password : product123
+                            
 **Dashboard** : Upon successful login, you will be redirected to the dashboard based on your role.
 **Create Defect** : Testers can create new defects with detailed information.
 **Defect Listing** : View a list of all defects along with their status and other details.
