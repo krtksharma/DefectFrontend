@@ -56,10 +56,15 @@ ng serve
                             product owner -> userName : product and password : product123
                             
 **Dashboard** : Upon successful login, you will be redirected to the dashboard based on your role.
+
 **Create Defect** : Testers can create new defects with detailed information.
+
 **Defect Listing** : View a list of all defects along with their status and other details.
+
 **Defect Details** : Click on a defect to view detailed information including resolution history.
+
 **Defect Assignment** : Developers can view defects assigned to them and update their status and resolution.
+
 **Defect Reporting** : Product Owners can generate reports on defects for better project management.
 
 
