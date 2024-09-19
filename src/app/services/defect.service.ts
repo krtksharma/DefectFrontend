@@ -11,7 +11,7 @@ import { DefectReport } from './defectReport';
   providedIn: 'root'
 })
 export class DefectService {
-  private baseUrl = 'https://defectmanagement-production.up.railway.app/api/defects';
+  private baseUrl = 'https://defectmanagements-production.up.railway.app/api/defects';
  
   constructor(private http: HttpClient) { }
 
