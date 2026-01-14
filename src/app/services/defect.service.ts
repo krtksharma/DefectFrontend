@@ -11,7 +11,7 @@ import { DefectReport } from './defectReport';
   providedIn: 'root'
 })
 export class DefectService {
-  private baseUrl = 'http://defectmanagement-env.eba-jggmxtc5.ap-south-1.elasticbeanstalk.com/api/defects';
+  private baseUrl = 'https://defectmanagement-env.eba-jggmxtc5.ap-south-1.elasticbeanstalk.com/api/defects';
  
   constructor(private http: HttpClient) { }
 
@@ -41,4 +41,5 @@ export class DefectService {
     return this.http.put(`${this.baseUrl}/resolve`, updateDefectDto);
   }
 }
+
 
