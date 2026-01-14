@@ -14,7 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
  
   login(username: string, password: string): void {
-    this.http.post<any>('https://defectmanagements-production.up.railway.app/api/users/login', { userName: username, password: password }).subscribe(
+    this.http.post<any>('http://defectmanagement-env.eba-jggmxtc5.ap-south-1.elasticbeanstalk.com/api/users/login', { userName: username, password: password }).subscribe(
       response => {
         if (response && response.role) {
           this.isAuthenticated = true;
@@ -59,3 +59,4 @@ export class AuthService {
     return expectedRoles.includes(userRole);
   }
 }
+
